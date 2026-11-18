@@ -68,7 +68,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: eu-north-1
 
       - name: DEploy to EC2 via SSH
         uses: appleboy/ssh-action@v1.2.0
@@ -82,5 +82,5 @@ jobs:
             cd /home/ec2-user/todo-app
             echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
             docker compose pull
-            # docker compose up -d --remove-orphans   
+            docker compose up -d --remove-orphans   
       
