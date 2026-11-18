@@ -38,7 +38,7 @@ jobs:
         
       - name: Build Docker image locally
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/todo-app latest .
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/todo-app:latest .
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@v0.36.0
