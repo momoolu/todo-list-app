@@ -79,7 +79,7 @@ jobs:
            port: 22
            script: 
              echo "Successfully connected via appleboy ssh"
-             cd /home/ubuntu/todo-app
+             cd /home/ec2-user/todo-app
              echo "${{ secrets.Docker_TOKEN }}" | docker ligin -u \
              "${{ secrets.DOCKERHUB_USERNAME }}" --password-studin
              docker compose pull
